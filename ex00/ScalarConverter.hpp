@@ -1,22 +1,42 @@
 #pragma once
 #include <string>
+#include <limits>
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+#include <cerrno>
 
-class Conversor
+#define PSEUDO_LITERAL_SIZE 6
+
+enum Type {
+	CHAR_T,
+	INT_T,
+	FLOAT_T,
+	DOUBLE_T,
+	PSEUDO_T,
+	UNKNOWN_T
+};
+
+class ScalarConverter
 {
 	private:
-		Conversor();
-		Conversor(Conversor const &);
-		Conversor &operator=(Conversor const &);
-		~Conversor();
+		ScalarConverter();
+		ScalarConverter(ScalarConverter const &);
+		ScalarConverter &operator=(ScalarConverter const &);
+		~ScalarConverter();
+		
+		static Type getType(const std::string &input);
+		static bool isInt(const std::string &input);
+		static bool isFloat(const std::string &input);
+		static bool isDouble(const std::string &input);
+		static bool isPseudoLiteral(const std::string &input);
+		static void view(double d, bool isPseudo) ;
 	public:
 		static void convert(std::string const &literal);
 };
 
 
-Conversor::Conversor() {}
-Conversor::~Conversor() {}
-Conversor &operator=(Conversor const &) {}
-Conversor(Conversor const &) {}
+
 
 
 
