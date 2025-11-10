@@ -166,10 +166,10 @@ void ScalarConverter::convert(std::string const &literal) {
                 d = std::numeric_limits<double>::quiet_NaN();
 			break;
 		default:
-			std::cout << "char: impossible\n
-						int: impossible\n
-						float: impossible\n
-						double: impossible"
+			std::cout << "char: impossible\n" <<
+						"int: impossible\n" <<
+						"float: impossible\n" <<
+						"double: impossible"
 						<< std::endl;
 			return;
 	}

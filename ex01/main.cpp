@@ -13,10 +13,10 @@ int main()
 	std::cout << std::endl;
 
 	uintptr_t raw = Serializer::serialize(&data);
-	std::cout << "Serialize contetn" << raw << std::endl;
+	std::cout << "Serialize contetn " << raw << std::endl;
 	
 	Data* ptr = Serializer::deserialize(raw);
-	std::cout << "Serialize contetn" << ptr << std::endl;
+	std::cout << "Serialize contetn " << ptr << std::endl;
 
 	if (ptr == &data)
 		std::cout << "Deserialized ptr is equals" << std::endl;
